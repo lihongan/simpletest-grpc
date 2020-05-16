@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/lihongan/simpletest-grpc/api"
 	"golang.org/x/net/context"
@@ -9,9 +10,16 @@ import (
 )
 
 func main() {
+	addr := "127.0.0.1:50080"
+	if os.Args != nil && len(os.Args) == 2 {
+		addr = os.Args[1]
+	} else {
+		log.Printf("Use default server address: 127.0.0.1:50080")
+	}
+
 	var conn *grpc.ClientConn
 
-	conn, err := grpc.Dial(":50080", grpc.WithInsecure())
+	conn, err := grpc.Dial(addr, grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("cannot connect: %s", err)
 	}

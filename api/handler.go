@@ -11,5 +11,5 @@ type Server struct {
 
 func (s *Server) SayHello(ctx context.Context, in *PingMessage) (*PingMessage, error) {
 	log.Printf("Receive message %s", in.Greeting)
-	return &PingMessage{Greeting: "echo test"}, nil
+	return &PingMessage{Greeting: "echo reply"}, nil
 }
