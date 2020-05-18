@@ -1,2 +1,2 @@
 # simpletest-grpc
-simple test client and server for gRPC
+simple containerized client and server for gRPC testing in OpenShift/Kubernetes.
