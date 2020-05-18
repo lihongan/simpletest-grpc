@@ -6,7 +6,7 @@ LABEL maintainer="<hongli@redhat.com>"
 
 WORKDIR /app
 
-COPY ./bin/server .
+COPY ./bin .
 
 # Expose port 50080
 EXPOSE 50080
