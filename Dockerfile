@@ -6,10 +6,11 @@ LABEL maintainer="<hongli@redhat.com>"
 
 WORKDIR /app
 
-COPY ./bin/secure-server ./bin/secure-client ./
+COPY ./cert ./cert
+COPY ./bin/secure-server ./bin/secure-client ./bin/
 
 # Expose port 50443
 EXPOSE 50443
 
 # Run the executable
-ENTRYPOINT ["./secure-server"]
+ENTRYPOINT ["./bin/secure-server"]
